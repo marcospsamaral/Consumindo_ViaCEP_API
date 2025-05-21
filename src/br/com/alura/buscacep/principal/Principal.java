@@ -9,12 +9,12 @@ import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
+        ConsultaCep consulta = new ConsultaCep();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Digite seu CEP: ");
         String leitura = scanner.nextLine().replaceAll("\\s-", "");
 
         try {
-            ConsultaCep consulta = new ConsultaCep();
             Endereco novoEndereco = consulta.buscaEndereco(leitura);
             GeradorDeArquivo enderecoJson = new GeradorDeArquivo();
             enderecoJson.salvaJson(novoEndereco);
