@@ -13,7 +13,7 @@ public class GeradorDeArquivo {
         try {
             System.out.println("\n" + enderecoJson.toJson(endereco) + "\n");
 
-            FileWriter enderecoJsonDoc = new FileWriter("endereco.json");
+            FileWriter enderecoJsonDoc = new FileWriter(endereco.cep() +".json");
             enderecoJsonDoc.write(enderecoJson.toJson(endereco));
             enderecoJsonDoc.close();
         } catch (IOException e) {
